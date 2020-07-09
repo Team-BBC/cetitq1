@@ -27,4 +27,80 @@ if (isset($_POST['ajax'])) {
 }
 
 
+
+/*
+  require_once('funciones/bakend.php');
+  $myObj = new dbConnect();
+  $sql = "select * from document";
+  if(isset($_GET['search']) ){
+    //there is a search asked for 
+
+    $sustancia = htmlspecialchars($_GET["search"]);
+
+    $sustancia2 = $myObj->real_escape_string($sustancia);
+
+    if ($result = $myObj->query("SELECT * from documents where sustancia like '$sustancia' limit 14")) {
+      while ($row = $result->fetch_assoc()) {
+        $datosTabla = "";
+
+        $datosTabla = $datosTabla.'<td style="display:non;">'$row['id']'</td>
+        <td>'$row['sustancia']'</td>
+        <td>'$row['url']'</td>
+        <td>'$row['fecha']'</td>
+        <td class="text-center">
+          <span class="btn btn-warning btn-sm editbtn" >
+            <img src="imagenes/editar.png">
+          </span>
+        </td>
+        <td class="text-center">
+        <span class="btn btn-danger btn-sm deletebtn">
+          <img src="imagenes/borrar.png">
+          </span>
+        </td>
+        <td class="text-center">
+          <span class="btn btn-info btn-sm ">                      
+            <a href = '$row['url']' target="_blank">
+            <img src="imagenes/descargar.png">
+            </a>
+          </span>
+        </td>
+        </tr>
+         ';
+      }
+      echo $datosTabla;
+      echo "</table>"
+    }else{
+      echo "Error consulting database";
+    }
+  }
+  /*while($row = $result->fetch_assoc()){
+    ?>
+      <td style = "display:none;"><?php $row['id'];?></td>
+      <td><?php $row['sustancia'];?></td>
+      <td><?php $row['url'];?></td>
+      <td><?php $row['fecha'];?></td>
+      <td class="text-center">
+        <span class="btn btn-warning btn-sm editbtn" >
+          <img src="imagenes/editar.png">
+        </span>
+      </td>
+      <td class="text-center">
+      <span class="btn btn-danger btn-sm deletebtn">
+        <img src="imagenes/borrar.png">
+        </span>
+      </td>
+      <td class="text-center">
+        <span class="btn btn-info btn-sm ">                      
+          <a href = '<?php $row['url']?>' target="_blank">
+          <img src="imagenes/descargar.png">
+          </a>
+        </span>
+      </td>
+      </tr>
+      <?php
+      echo $datosTabla;
+  }
+  echo "</table>";
+  mysqli_close($myObj);
+  */
 ?>

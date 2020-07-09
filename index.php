@@ -1,3 +1,9 @@
+<?php
+	include "admin/funciones/bakend.php";
+	$myObj = new dbConnect();
+?>
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -14,7 +20,8 @@
 	    ?>
 	    <link rel= "stylesheet"  type="text/css"  href="libraries/stylesheet.css"/>
 
-	    <title>Hojas de Seguridad </title>
+
+	    <title>Hojas de Seguridad</title>
 	</head>
 
 	<body style="background-image: url(imagenes/bg.png);">
@@ -54,8 +61,8 @@
 	                            <div class="card-body">
 	                                <div class="row">
 	                                    <div class="col-sm-12 m-auto">
-	                                        <?php include "admin/funciones/bakend.php";
-	                                    		$myObj = new dbConnect();
+											<?php 
+												$myObj->uPlaceTableHeader();
 	                                    		$myObj->display();
 	                                    	?>
 	                                    </div>
