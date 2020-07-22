@@ -1,7 +1,7 @@
 <div id="deleteModal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form id="f_prog" action="admin/funciones/eliminar.php" method="GET" enctype="multipart/form-data">
+      <form id="f_prog" action="admin/funciones/eliminar.php" method="post" enctype="multipart/form-data">
         <div class="modal-header">
           <h4 class="modal-title">Borrar Sustancia</h4>
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

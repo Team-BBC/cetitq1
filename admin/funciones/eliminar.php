@@ -1,6 +1,26 @@
 <?php     
-    require_once('bakend.php');
+    include 'bakend.php';
     $myObj = new dbConnect();
+
+    $sustancia = $_POST['sustancia'];
+    $dir = "ficherosSubidos/$sustancia.pdf";
+    $query="DELETE from document where sustancia =?";
+    $stmt=$myObj->mysqli->prepare($query);
+    //binding where the ? is in the query
+    $stmt->bind_param("s", $sustancia);
+    $result = $stmt->execute();
+    if($result){
+        if(unlink($dir)){
+            echo "hoja de seguridad para '$sustancia' fue eliminada";
+        }else{
+            echo "Hubo un error al eliminar la hoja de seguridad";
+        }
+    }else{
+        echo "Error al borrar el la base de datos". mysqli_error();
+    }
+
+/*
+mannys code
     //valor que recibe del form de adminsearch.php
     //$sustancia = $_POST["sustancia"];
     //se convierte a la ruta del documento
@@ -19,4 +39,7 @@
     } else {
         echo "Error deleting record: " . mysqli_error($conn);
     }
+
+
+    */
 ?>
