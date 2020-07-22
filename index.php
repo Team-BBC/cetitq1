@@ -82,5 +82,6 @@
 		<script>
 			feather.replace();
 		</script>
+		<?php include 'hojasTq/footer.php';?>
 	</body>
 </html>

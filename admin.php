@@ -6,7 +6,7 @@ session_start();
     }
     require 'admin/funciones/bakend.php';
     $myObj = new dbConnect();
-    
+
 ?>
 
 <!DOCTYPE html>
@@ -20,8 +20,9 @@ session_start();
         <!-- Bootstrap CSS and js libraries -->
         <?php
             require 'libraries/libraries.php';
+
         ?>
-        
+        <link rel= "stylesheet"  type="text/css"  href="../libraries/stylesheet.css"/>
         <title> Administrador </title>
         
     </head>
@@ -33,7 +34,7 @@ session_start();
 
             <!--barra de busqueda & resultados-->
             <div class=" container-fluid border border-dark rounded ml-3" style="float:left;background: white;height:auto ;width: 70%;margin-top: 20px;margin-bottom: 5px">
-                <form method="GET">
+                <form method="post">
                     <div class="form-group text-left" style="margin-top: 10px">
                         <input class="form-control m-auto mt-1" style="width: 60%; float: left;" type="text" name="search" placeholder="Escribe una Sustancia" id="search" required/>
                         <input type="submit" name="btnSearch" value="Buscar">
@@ -48,11 +49,8 @@ session_start();
                             <h4>Resultados</h4>                                       
                                 <div>
                                      <?php
-                                        if (isset($_POST['btnSearch'])) {
-                                          require 'admin/adminSearch.php';
-                                        }else{
-                                          //$myObj->aPlaceTableHeader();
-                                          $myObj->displayAll();
+                                        if(isset($_POST['search'])){
+                                            $myObj->searchAdmin($_POST['search']);
                                         }
                                     ?>
                                 </div>                                                                   
@@ -77,7 +75,6 @@ session_start();
                             </div>
                         </div>
                         <input type="submit" class="btn btn-primary mb-3" value="Enviar"  name="ok" id="ok">
-
                 </form>
             </div>
 
@@ -88,8 +85,9 @@ session_start();
         <?php require_once "admin/funciones/modaledit.php" ?>
         <?php require_once "admin/funciones/modaldelete.php" ?>
         <script src="admin/script.js"></script>
-        <link rel= "stylesheet"  type="text/css"  href="../libraries/stylesheet.css"/>
+        
         
         <!--Pie de Pagina-->
+        <?php //include'hojasTq/footer.php';?>
     </body>
 </html>

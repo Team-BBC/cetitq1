@@ -28,7 +28,7 @@
     <div id="content">
         <!--Navbar-->
         <?php
-            include "../hojastq/navbar.php";
+            include '../hojasTq/navbar.php';
         ?>
 
          <div class="container rounded" style="background: white; width: 80%;margin-top: 50px;" >
@@ -58,7 +58,4 @@
     </div>
 
     <!--footer -->
-
-    
-
 </body>

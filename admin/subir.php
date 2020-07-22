@@ -23,7 +23,7 @@
     }else{
 		//Sube archivos a la base de datos
 		$con ="INSERT INTO document(sustancia,url,fecha) 
-		VALUES ('".$nombre."' , '".$destino."' , NOW() )";
+		VALUES ('".$nombre."' , '".$nombre.".pdf' , NOW() )";
 
 
     	if(mysqli_query($myObj->mysqli,$con)){
